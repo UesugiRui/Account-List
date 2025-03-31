@@ -1,0 +1,1352 @@
+/* Dark mode colors */
+:root {
+  --bg-primary: #121212;  /* Dark background */
+  --bg-secondary: #1e1e1e;  /* Slightly lighter shade */
+  --bg-tertiary: #2a2a2a;   /* Even lighter shade for contrast */
+  --text-primary: #ffffff;  /* White text */
+  --text-secondary: #a0a0a0; /* Gray text */
+  --border-color: #333333;
+  --accent-primary: #00b7ff;  /* Neon blue */
+  --accent-hover: #33c5ff;  /* Lighter version for hover */
+  --error-color: #ff3366;
+  --success-color: #00ff9d;
+  --shadow-color: rgba(0, 183, 255, 0.15);
+}
+
+.account-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+}
+
+.account-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.account-header h1 {
+  margin: 0;
+  color: var(--accent-primary);
+  font-size: 2rem;
+}
+
+.action-buttons-container {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.75rem;
+  height: 38px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.action-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--accent-primary);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 150px; 
+  font-weight: 500;
+  white-space: nowrap; 
+}
+
+.action-button:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+  color: white;
+}
+
+.action-button.active {
+  background-color: var(--accent-primary);
+  color: var(--text-primary);
+  box-shadow: 0 0 10px var(--shadow-color);
+}
+
+.delete-button {
+  background-color: var(--error-color);
+  color: var(--text-primary);
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.delete-button:hover {
+  background-color: #ff5c85;
+  transform: translateY(-1px);
+  color: white;
+}
+
+.delete-button.active {
+  background-color: var(--error-color);
+  color: var(--text-primary);
+}
+
+.tables-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0 0.5rem;
+}
+
+.table-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  color: var(--text-primary);
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.table-item:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+.table-name {
+  font-weight: 500;
+  color: var(--accent-primary);
+}
+
+.account-action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--bg-tertiary);
+  color: var(--accent-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  white-space: nowrap;
+  min-width: 120px;
+}
+
+.account-action-button:hover {
+  background-color: var(--bg-secondary);
+  transform: translateY(-1px);
+  color: white;
+}
+
+.account-action-button .icon {
+  width: 16px;
+  height: 16px;
+  color: var(--accent-primary);
+}
+
+.account-action-button:hover .icon {
+  color: white;
+}
+
+/* Common styles for account action buttons */
+.add-account-button,
+.edit-account-button,
+.delete-account-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--bg-tertiary);
+  color: var(--accent-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  white-space: nowrap;
+  min-width: 120px;
+}
+
+.add-account-button:hover,
+.edit-account-button:hover,
+.delete-account-button:hover {
+  background-color: var(--bg-secondary);
+  transform: translateY(-1px);
+  color: white;
+}
+
+.add-account-button .icon,
+.edit-account-button .icon,
+.delete-account-button .icon {
+  width: 16px;
+  height: 16px;
+  color: var(--accent-primary);
+}
+
+.add-account-button:hover .icon,
+.edit-account-button:hover .icon,
+.delete-account-button:hover .icon {
+  color: white;
+}
+
+.delete-button {
+  background-color: var(--bg-tertiary);
+  color: var(--accent-primary);
+  border: none;
+}
+
+.delete-button:hover {
+  background-color: var(--bg-secondary);
+  color: var(--accent-primary);
+  transform: translateY(-1px);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 1200px;
+  position: relative;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.modal-header h2 {
+  color: var(--text-primary);
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--text-primary);
+  transition: color 0.2s ease;
+}
+
+.close-button:hover {
+  color: var(--accent-primary);
+}
+
+.close-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.modal-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-input-group label {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.modal-input-group input,
+.modal-input-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.modal-input-group input:focus,
+.modal-input-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px rgba(var(--accent-primary-rgb), 0.2);
+}
+
+.modal-input-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.modal-input-group input::placeholder,
+.modal-input-group textarea::placeholder {
+  color: var(--text-secondary);
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: auto;
+}
+
+.modal-button,
+.cancel-button,
+.confirm-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancel-button {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.cancel-button:hover {
+  background-color: var(--bg-tertiary);
+  transform: translateY(-1px);
+  color: white;
+}
+
+.confirm-button {
+  background-color: var(--accent-primary);
+  color: white;
+  border: none;
+}
+
+.confirm-button:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+/* Notification styles */
+.notification {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  animation: slideIn 0.3s ease-out;
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px var(--shadow-color);
+  color: var(--text-primary);
+}
+
+.notification.success .notification-content {
+  border-left: 4px solid var(--success-color);
+}
+
+.notification.error .notification-content {
+  border-left: 4px solid var(--error-color);
+}
+
+.notification-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.notification.success .notification-icon {
+  color: var(--success-color);
+}
+
+.notification.error .notification-icon {
+  color: var(--error-color);
+}
+
+/* Table Styles */
+.accounts-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+}
+
+.accounts-table th,
+.accounts-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+}
+
+.accounts-table th {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.accounts-table tbody tr {
+  background-color: var(--bg-primary);
+}
+
+.accounts-table tbody tr:hover {
+  background-color: var(--bg-secondary);
+}
+
+/* Column widths */
+.accounts-table th:nth-child(1),
+.accounts-table td:nth-child(1) { /* ID */
+  width: 60px;
+  min-width: 60px;
+}
+
+.accounts-table th:nth-child(2),
+.accounts-table td:nth-child(2) { /* Username */
+  width: 200px;
+  min-width: 200px;
+}
+
+.accounts-table th:nth-child(3),
+.accounts-table td:nth-child(3) { /* Password */
+  width: 100px;
+  min-width: 100px;
+}
+
+.accounts-table th:nth-child(4),
+.accounts-table td:nth-child(4) { /* Description */
+  width: 300px;
+  min-width: 300px;
+}
+
+.accounts-table th:nth-child(5),
+.accounts-table td:nth-child(5) { /* Created At */
+  width: 180px;
+  min-width: 180px;
+}
+
+.accounts-table th:nth-child(6),
+.accounts-table td:nth-child(6) { /* Actions */
+  width: 100px;
+  min-width: 100px;
+  text-align: center;
+}
+
+.accounts-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* Style the action buttons */
+.accounts-table .edit-button,
+.accounts-table .delete-button {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  min-width: 80px;
+  display: inline-block;
+}
+
+.accounts-table .edit-button {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+.accounts-table .edit-button:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.accounts-table .delete-button {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--accent-primary); 
+  color: var(--text-primary);
+}
+
+.accounts-table .delete-button:hover {
+  background-color: var(--accent-hover); 
+  transform: translateY(-1px);
+  color: white;
+}
+
+.modal-content {
+  max-width: 1200px !important;  
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 2rem;
+  background-color: var(--bg-primary);
+  border-radius: 8px;
+}
+
+.account-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.add-button {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+.add-button:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.delete-button {
+  background-color: var(--error-color);
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #ff5c85;
+  transform: translateY(-1px);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.modal-content h2 {
+  margin: 0 0 1.5rem;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.modal-content textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.modal-content input:focus,
+.modal-content select:focus,
+.modal-content textarea:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px rgba(var(--accent-primary-rgb), 0.2);
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: auto;
+}
+
+.modal-button,
+.cancel-button,
+.confirm-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancel-button {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.cancel-button:hover {
+  background-color: var(--bg-tertiary);
+  transform: translateY(-1px);
+  color: white;
+}
+
+.confirm-button {
+  background-color: var(--accent-primary);
+  color: white;
+  border: none;
+}
+
+.confirm-button:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.75rem;
+  height: 40px;
+}
+
+.mode-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.mode-button .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.mode-button:hover {
+  background-color: var(--bg-secondary);
+  transform: translateY(-1px);
+  color: white;
+}
+
+.mode-button.active {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+.edit-mode-button.active {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+.delete-mode-button.active {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+.delete-warning {
+  color: var(--text-primary);
+  margin: 1rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.delete-warning strong {
+  background-color: var(--bg-tertiary);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.delete-confirm-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.delete-confirm-input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px rgba(var(--accent-primary-rgb), 0.2);
+}
+
+.delete-confirm-input.valid {
+  border-color: var(--success-color);
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.delete-button:disabled {
+  background-color: #e2e8f0 !important;
+  border-color: #e2e8f0 !important;
+  color: var(--text-secondary) !important;
+  cursor: not-allowed;
+}
+
+.modal-button.delete-button {
+  background-color: var(--error-color);
+  color: white;
+}
+
+.modal-button.delete-button:hover:not(:disabled) {
+  background-color: #ff5c85;
+  transform: translateY(-1px);
+}
+
+.modal-button.delete-button:disabled {
+  background-color: #e9ecef;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.mode-instruction {
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.mode-instruction .icon {
+  width: 24px;
+  height: 24px;
+}
+
+.account-item.delete-mode {
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+}
+
+.account-item.delete-mode:hover {
+  border-color: #cbd5e1;
+  background-color: #f8fafc;
+}
+
+.delete-steps {
+  margin-bottom: 1.5rem;
+}
+
+.step-number {
+  display: inline-block;
+  background-color: var(--accent-primary);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.delete-instruction {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.delete-warning {
+  margin-bottom: 1.5rem;
+}
+
+.delete-confirm-input.valid {
+  border-color: var(--success-color);
+  background-color: var(--bg-tertiary);
+}
+
+.delete-confirm-input.valid:focus {
+  border-color: var(--success-color);
+  box-shadow: 0 0 0 3px rgba(var(--success-color-rgb), 0.25);
+}
+
+.match-status {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.match-status::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.match-status.error {
+  color: var(--error-color);
+}
+
+.match-status.error::before {
+  background-color: var(--error-color);
+}
+
+.match-status.success {
+  color: var(--success-color);
+}
+
+.match-status.success::before {
+  background-color: var(--success-color);
+}
+
+.platform-name {
+  font-weight: 600;
+  background-color: var(--bg-tertiary);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: var(--text-primary);
+}
+
+input[type="password"].delete-confirm-input {
+  letter-spacing: 0.2em;
+  font-family: monospace;
+}
+
+.final-step {
+  background-color: var(--error-color);
+  color: white;
+}
+
+.delete-instruction strong {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.platform-selection-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.platform-selection-button {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  margin: 0.5rem 0;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.platform-selection-button:hover {
+  background-color: var(--bg-tertiary);
+  border-color: var(--accent-primary);
+  transform: translateY(-1px);
+  color: white;
+}
+
+.platform-selection-button:active {
+  transform: translateY(0);
+}
+
+.modal-input-group textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  resize: vertical;
+  font-family: inherit;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.modal-input-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px rgba(var(--accent-primary-rgb), 0.2);
+  background-color: var(--bg-secondary);
+}
+
+/* Dashboard Layout */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  width: 100%;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  background-color: #2c3e50;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.sidebar-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+}
+
+.sidebar-nav {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: var(--text-primary);
+  opacity: 0.7;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  width: 100%;
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.nav-item.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.nav-item .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.sidebar-footer {
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.welcome-text {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.logout-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.logout-button .icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Main Content Styles */
+.main-content {
+  margin-left: 250px;
+  padding: 1.5rem;
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+  width: calc(100vw - 250px);
+  box-sizing: border-box;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.modal-buttons button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.notification {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  animation: slideIn 0.3s ease-out;
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  color: var(--text-primary);
+}
+
+.notification.success .notification-content {
+  border-left: 4px solid var(--success-color);
+}
+
+.notification.error .notification-content {
+  border-left: 4px solid var(--error-color);
+}
+
+.notification-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.notification.success .notification-icon {
+  color: var(--success-color);
+}
+
+.notification.error .notification-icon {
+  color: var(--error-color);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.notification.hide {
+  animation: slideOut 0.3s ease-out forwards;
+}
+
+.action-button.active {
+  background-color: var(--accent-primary) !important;
+  border-color: var(--accent-primary) !important;
+  color: white !important;
+}
+
+.action-button.active:hover {
+  background-color: var(--accent-hover) !important;
+  border-color: var(--accent-hover) !important;
+}
+
+.delete-button.active {
+  background-color: var(--error-color) !important;
+  border-color: var(--error-color);
+  color: white !important;
+}
+
+.delete-button.active:hover {
+  background-color: #ff5c85 !important;
+  border-color: #ff5c85;
+}
+
+/* Scrollbar styling */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: rgb(28, 28, 28);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: rgb(45, 45, 45);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: rgb(55, 55, 55);
+}
+
+.error-message {
+  color: var(--error-color);
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: var(--bg-secondary);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+  height: 48px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.search-bar {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.search-bar input {
+  width: 100%;
+  height: 38px;
+  padding: 0 1rem 0 2.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.search-bar input:focus {
+  border-color: var(--accent-primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
+.accounts-table tbody tr {
+  background-color: var(--bg-primary);
+}
+
+.accounts-table tbody tr:hover {
+  background-color: var(--bg-secondary);
+}
+
+.accounts-table th {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.accounts-table td {
+  color: var(--text-primary);
+}
+
+.form-group input,
+.form-group textarea,
+.search-bar input {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.search-bar input:focus {
+  border-color: var(--accent-primary);
+  background-color: var(--bg-tertiary);
+}
+
+.form-group label {
+  color: var(--text-primary);
+}
+
+.password-cell {
+  color: var(--text-primary);
+}
+
+.modal-content {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 1200px;
+  position: relative;
+}
+
+.add-platform-button {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-platform-button:hover {
+  opacity: 0.9;
+}
+
+.edit-form {
+  padding: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.form-group input,
+.form-group textarea,
+.search-bar input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  background-color: var(--bg-tertiary);
+  transition: all 0.2s;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.search-bar input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px rgba(var(--accent-primary-rgb), 0.2);
+}
+
+.modal-content {
+  max-width: 900px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
